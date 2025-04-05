@@ -1,5 +1,3 @@
 <template>
-	<div>
-		<DSidebar />
-	</div>
+  <div></div>
 </template>

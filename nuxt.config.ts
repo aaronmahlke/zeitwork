@@ -2,7 +2,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    // experimental: { appManifest: false },
+  // experimental: { appManifest: false },
   compatibilityDate: "2024-11-01",
   future: { compatibilityVersion: 4 },
   css: ["~/assets/css/main.css"],
@@ -10,5 +10,5 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   devtools: { enabled: true },
-  modules: ["@nuxt/image", "shadcn-nuxt"],
+  modules: ["@nuxt/image", "@vueuse/nuxt", "nuxt-auth-utils"],
 });

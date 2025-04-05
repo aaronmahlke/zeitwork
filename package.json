@@ -13,17 +13,26 @@
     "@heroicons/vue": "^2.2.0",
     "@nuxt/image": "1.10.0",
     "@tailwindcss/vite": "^4.1.3",
-    "@vueuse/core": "^13.0.0",
+    "@types/node": "^22.14.0",
+    "@vueuse/nuxt": "13.0.0",
+    "@vueuse/router": "^13.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "drizzle-orm": "^0.41.0",
     "lucide-vue-next": "^0.487.0",
     "nuxt": "^3.16.2",
+    "nuxt-auth-utils": "^0.5.18",
+    "pg": "^8.14.1",
     "reka-ui": "^2.2.0",
-    "shadcn-nuxt": "2.0.0",
     "tailwind-merge": "^3.1.0",
     "tailwindcss": "^4.1.3",
     "tw-animate-css": "^1.2.5",
+    "uuidv7": "^1.0.2",
     "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "vue-router": "^4.5.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.30.6"
   }
 }
