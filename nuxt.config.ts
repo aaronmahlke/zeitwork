@@ -9,6 +9,6 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   modules: ["@nuxt/image", "@vueuse/nuxt", "nuxt-auth-utils"],
 });

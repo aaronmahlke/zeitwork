@@ -3,8 +3,8 @@ import { lists } from "~~/server/database/schema";
 
 const bodySchema = z.object({
   name: z.string().min(1).max(50),
-  icon: z.string().min(1).optional(),
-  color: z.string().min(1).optional(),
+  icon: z.string().optional(),
+  color: z.string().optional(),
 });
 
 export default defineEventHandler(async (event) => {

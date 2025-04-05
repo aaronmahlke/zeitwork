@@ -16,8 +16,11 @@ import { ChevronsUpDownIcon } from "lucide-vue-next";
 
 const { data: lists, refresh: refreshLists } = await useFetch("/api/lists");
 
-const isCreateModalOpen = ref(false);
 const listName = ref("");
+const listIcon = ref("Hashtag");
+const listColor = ref("");
+
+const isCreateModalOpen = ref(false);
 const listNameInput = ref();
 
 function openCreateModal() {
@@ -27,6 +30,7 @@ function openCreateModal() {
 function closeCreateModal() {
   isCreateModalOpen.value = false;
   listName.value = "";
+  listIcon.value = "Hashtag";
   refreshLists();
 }
 
@@ -44,8 +48,8 @@ async function createList() {
     method: "POST",
     body: {
       name: listName.value,
-      icon: "DocumentText",
-      color: "blue",
+      icon: listIcon.value,
+      color: listColor.value,
     },
   });
   closeCreateModal();
@@ -93,36 +97,6 @@ async function createList() {
             :color="list.color"
           />
         </template>
-        <!-- <DSidebarLink
-          name="Todos"
-          link="#"
-          :icon="DocumentCheckIcon"
-          color="blue"
-        />
-        <DSidebarLink
-          name="Design"
-          link="#"
-          :icon="PaintBrushIcon"
-          color="pink"
-        />
-        <DSidebarLink
-          name="Zeitword CMS"
-          link="#"
-          :icon="DocumentTextIcon"
-          color="amber"
-        />
-        <DSidebarLink
-          name="Zeitword Website"
-          link="#"
-          :icon="ComputerDesktopIcon"
-          color="green"
-        />
-        <DSidebarLink
-          name="Client Projects"
-          link="#"
-          :icon="UsersIcon"
-          color="purple"
-        /> -->
       </div>
     </div>
     <div>
@@ -141,7 +115,7 @@ async function createList() {
       class="p-2 bg-neutral-subtle rounded-sm flex items-center gap-1"
       @submit.prevent="createList"
     >
-      <DButton variant="secondary" :icon-left="HashtagIcon" />
+      <DIconPickerPopover v-model="listIcon" v-model:color="listColor" />
       <DInput
         ref="listNameInput"
         v-model="listName"

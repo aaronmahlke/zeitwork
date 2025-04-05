@@ -45,7 +45,7 @@ const component = computed(() => {
           v-else-if="iconName"
           :name="iconName"
           class="size-4"
-          :class="color ? `text-${color}-600` : 'text-neutral-subtle'"
+          :color="color"
         />
       </div>
       {{ name }}
